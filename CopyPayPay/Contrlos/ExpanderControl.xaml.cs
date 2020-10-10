@@ -29,10 +29,5 @@ namespace CopyPayPay.Contrlos
         {
             this.Close();
         }
-
-        private void border_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
     }
 }

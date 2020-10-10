@@ -4,7 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:CopyPayPay.Contrlos"
-                   mc:Ignorable="d" Width="185" MouseDoubleClick="UserControl_MouseDoubleClick" Foreground="{x:Null}" >
+                   mc:Ignorable="d" Width="232.5" MouseDoubleClick="UserControl_MouseDoubleClick" Foreground="{x:Null}" >
     <UserControl.Background>
         <SolidColorBrush x:Name="Panel" Color="#FF191919"/>
 
@@ -51,7 +51,15 @@
     <Grid RenderTransformOrigin="0.5,0.5">
         <Button HorizontalAlignment="Right" Width="26" FontSize="24" Style="{StaticResource Button_c}" Margin="0,0,1,0" >
             <Canvas MouseDown="Canvas_MouseDown">
+                <!--CloseWindw-->
                 <Label Content="X" Canvas.Left="-11" Canvas.Top="-20" Foreground="White" FontSize="20"/>
+            </Canvas>
+        </Button>
+        <Button HorizontalAlignment="Right" Width="26" Margin="0,0,60,0" Style="{StaticResource Button_hide}"  FontSize="24" Foreground="{x:Null}" BorderBrush="{x:Null}">
+            <!--<Image Height="26" Width="26" Source="setting.png"/>-->
+            <Canvas MouseDown="Canvas_MouseDown_2">
+                
+                <Label Content="S" Canvas.Left="-11" Canvas.Top="-20" Foreground="White" FontSize="20"/>
             </Canvas>
         </Button>
         <Button HorizontalAlignment="Right" Width="26" Margin="0,0,30,0" Style="{StaticResource Button_hide}"  FontSize="24" Foreground="{x:Null}">

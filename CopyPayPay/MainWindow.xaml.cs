@@ -9,6 +9,9 @@ using System.Windows.Forms;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Threading;
+using System.Runtime.Serialization.Json;
+using System.Xml.Serialization;
+using System.Runtime.Serialization.Formatters.Binary;
 
 namespace CopyPayPay
 {
@@ -20,6 +23,11 @@ namespace CopyPayPay
         public List<string> TextList = new List<string>();
         string text = "";
         NotifyIconPanel NP = new NotifyIconPanel();
+
+        
+        public Setting setting = new Setting();
+        // System.Xml.Serialization.XmlSerializer formatter = new System.Xml.Serialization.XmlSerializer(typeof(Setting));
+
         public MainWindow()
         {
             InitializeComponent();
@@ -35,8 +43,46 @@ namespace CopyPayPay
             ni.Icon = CopyPayPay.Res.CPyPyIcon;
             ni.Visible = true;
             ni.MouseDown += Ni_MouseDown;
-            
+            #region ddd
+            // Data.FolderSave + @"\setting.json"
+            //if (File.Exists(Data.FolderSave + @"\setting.xml"))
+            //{ 
+            //    var mySerializer = new XmlSerializer(typeof(Setting));
+            //    // To read the file, create a FileStream.
+            //    var myFileStream = new FileStream(Data.FolderSave + "\\setting.xml", FileMode.Open);
+            //    // Call the Deserialize method and cast to the object type.
+            //    setting = (Setting)mySerializer.Deserialize(myFileStream);
+            //}
+            //if (File.Exists(Data.FolderSave + @"\setting.json") == true)
+            //{
+            //    DataContractJsonSerializer formatter = new DataContractJsonSerializer(typeof(Setting));
+            //    using (FileStream fs = new FileStream(, FileMode.OpenOrCreate))
+            //    {
 
+            //        setting = (Setting)formatter.ReadObject(fs);
+            //    }
+            //    Data.Wind.SettingPanelW.SetValue(setting.BackgroundColor_wind);
+
+            //}
+            //else
+            //{
+
+            //    Data.Wind.SettingPanelW.SetValue(setting.BackgroundColor_wind = Data.Wind.BackgroundPR.Color);
+
+            //    Directory.CreateDirectory(Data.FolderSave);
+            //    using (FileStream fs = new FileStream(Data.FolderSave + @"\setting.json", FileMode.OpenOrCreate))
+            //    {
+            //        DataContractJsonSerializer formatter = new DataContractJsonSerializer(typeof(Setting));
+            //        formatter.WriteObject(fs, setting);
+            //    }
+            //}
+
+
+
+            //if (File.Exists(Data.FolderSave + @"\setting.dat") && File.ReadAllText(Data.FolderSave + @"\setting.dat").Length > 10)
+            //{//}
+            #endregion
+            Data.Wind.SettingPanelW.SetValue(Color.FromArgb(100, 255, 255, 255));
         }
         private void PhysicsTimerTick(object sender, EventArgs e)
         {
@@ -98,11 +144,7 @@ namespace CopyPayPay
                     }
 
                     break;
-                default:
-
-                    break;
             }
-
         }
 
         private void PanelControl_MouseDown(object sender, MouseButtonEventArgs e)
@@ -111,15 +153,11 @@ namespace CopyPayPay
                 this.DragMove();
         }
 
-        private void window_SizeChanged(object sender, SizeChangedEventArgs e)
-        {
 
-            //PointCollection PC = new PointCollection();
-            //PC.Add(new Point(0, 0));
-            //PC.Add(new Point(0, this.Height-3));
-            //PC.Add(new Point(this.Width-3, this.Height));
-            //PC.Add(new Point(this.Width, 0));
-            //Polyline_.Points = PC;
+        private void window_Loaded(object sender, RoutedEventArgs e)
+        {
+            Data.Wind.SettingPanelW.BorderSettingPanel.Visibility = Visibility.Hidden;
+            Data.Wind.SettingPanelW.SliderSettingPanel.Value = Data.Wind.BackgroundPR.Opacity * 100;
         }
     }
 }

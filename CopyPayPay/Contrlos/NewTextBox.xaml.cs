@@ -89,16 +89,16 @@ namespace CopyPayPay.Contrlos
 
             TextRange doc = new TextRange(RichText.Document.ContentStart, RichText.Document.ContentEnd);
             System.Windows.Clipboard.SetData(System.Windows.DataFormats.Text, (Object)doc.Text);
+            expanderControl_l.Close();
         }
 
         private void SavingToFile(object sender, RoutedEventArgs e)
         {
-            string Fil = AppDomain.CurrentDomain.BaseDirectory;
-            string SaveDir = Fil + @"\save";
-            if (!Directory.Exists(SaveDir))
-                Directory.CreateDirectory(SaveDir);
+            
+            if (!Directory.Exists(Data.FolderSave))
+                Directory.CreateDirectory(Data.FolderSave);
            
-            using (FileStream FS = File.Create(SaveDir + "\\" + lib.СhangeString.MultiReplace(DateText.Content.ToString(), new char[] { ':' , '.'}, '_') + ".txt"))
+            using (FileStream FS = File.Create(Data.FolderSave + "\\" + lib.СhangeString.MultiReplace(DateText.Content.ToString(), new char[] { ':' , '.'}, '_') + ".txt"))
             {
                 byte[] info = new System.Text.UTF8Encoding(true).GetBytes(
                     new TextRange(RichText.Document.ContentStart, RichText.Document.ContentEnd).Text

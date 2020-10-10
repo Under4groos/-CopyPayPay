@@ -22,9 +22,9 @@ namespace CopyPayPay.Contrlos
     /// </summary>
     public partial class PanelControl : System.Windows.Controls.UserControl
     {
-    
 
 
+        public bool ActiveWindSetting = false;
         public string Title
         {
             get { return (string)GetValue(V); }
@@ -69,6 +69,7 @@ namespace CopyPayPay.Contrlos
         {
             InitializeComponent();
             FSize = 12.0;
+            
         }
 
         private void Canvas_MouseDown(object sender, MouseButtonEventArgs e)
@@ -103,5 +104,20 @@ namespace CopyPayPay.Contrlos
             }
         }
 
+        private void Canvas_MouseDown_2(object sender, MouseButtonEventArgs e)
+        {
+            ActiveWindSetting = !ActiveWindSetting;
+            switch (ActiveWindSetting)
+            {
+                case true:
+                    Data.Wind.SettingPanelW.BorderSettingPanel.Visibility = Visibility.Visible;
+                    break;
+                case false:
+                    Data.Wind.SettingPanelW.BorderSettingPanel.Visibility = Visibility.Hidden;
+                    break;
+                default:
+                    break;
+            }
+        }
     }
 }

@@ -1,0 +1,77 @@
+﻿<UserControl x:Class="CopyPayPay.Contrlos.SettingPanel"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:CopyPayPay.Contrlos"
+             mc:Ignorable="d" Width="491.333" Foreground="{x:Null}">
+    <Border x:Name ="BorderSettingPanel" BorderBrush="#33FFFFFF"  BorderThickness="1,1,1,1" Background="#F22C2C2C" MouseLeave="BorderSettingPanel_MouseLeave">
+
+        <Grid>
+
+            <Border x:Name="border" BorderThickness="1,1,1,1" Margin="3,3,3,28" BorderBrush="#33FFFFFF"  >
+                <Grid VerticalAlignment="Stretch">
+                    <Label Content="Stayle" VerticalAlignment="Top" Background="#19FFFFFF" FontFamily="Segoe UI Black" Foreground="White"></Label>
+                    <Border BorderBrush="Black" CornerRadius="8" HorizontalAlignment="Left" Height="22"  VerticalAlignment="Top" Width="75" Margin="2,29,0,0" Background="#FFFDFDFD">
+                        <Grid Margin="0,-2,0,0">
+                            <Label Content="Dark" HorizontalAlignment="Center" VerticalAlignment="Center" Height="29" Margin="20,0,20,-5" />
+
+                        </Grid>
+                    </Border>
+                    <Border BorderBrush="Black" CornerRadius="8" HorizontalAlignment="Left" Height="22"  VerticalAlignment="Top" Width="75" Margin="79,29,0,0" Background="#FFFDFDFD">
+                        <Grid Margin="0,-2,0,0">
+                            <Label Content="light" HorizontalAlignment="Center" VerticalAlignment="Center" Height="28" Margin="20,0,21,-4" />
+
+                        </Grid>
+                    </Border>
+                    <Border x:Name="grid" VerticalAlignment="Top" Margin="0,56,0,0" Height="55">
+                        <Grid>
+                            <Slider x:Name="SliderSettingPanel" VerticalAlignment="Bottom"   ValueChanged="Slider_ValueChanged_1" Maximum="255" Foreground="{x:Null}" BorderBrush="{x:Null}" Background="#F22C2C2C" Margin="0,0,-1,5"/>
+                            <Label Content="Alpha window"  VerticalAlignment="Top" Foreground="White"  Margin="0,1,0,18" RenderTransformOrigin="0.508,1.485" Background="#19FFFFFF" FontFamily="Segoe UI Black"/>
+                            <Line X1="0" Y1="1" X2="999" Y2="1" Stroke="#33FFFFFF"></Line>
+                        </Grid>
+                    </Border>
+                    <Border VerticalAlignment="Top" Margin="0,111,0,0" Height="168">
+                        <StackPanel>
+                            <Label Content="Color background"  VerticalAlignment="Top" Foreground="White"  Margin="0,1,0,18" RenderTransformOrigin="0.508,1.485" Background="#19FFFFFF" FontFamily="Segoe UI Black"/>
+
+                            <Border>
+                                <Grid Margin="0,-15,0,0">
+
+                                    <Label Content="R" VerticalAlignment="Top" Foreground="Red"  Grid.ColumnSpan="2"/>
+                                    <Slider x:Name="ColorR" VerticalAlignment="Top" Margin="0,26,0,0" Maximum="255" SmallChange="1" ValueChanged="Slider_ValueChanged_1" Grid.ColumnSpan="2"/>
+                                </Grid>
+                            </Border>
+                            <Border>
+                                <Grid>
+                                    <Label Content="G" VerticalAlignment="Top" Foreground="Red"/>
+                                    <Slider x:Name="ColorG" VerticalAlignment="Top" Margin="0,26,0,0" Maximum="255" SmallChange="1" ValueChanged="Slider_ValueChanged_1"/>
+                                </Grid>
+                            </Border>
+                            <Border >
+                                <Grid>
+                                    <Label  Content="B" VerticalAlignment="Top" Foreground="Red"/>
+                                    <Slider x:Name="ColorB" VerticalAlignment="Top" Margin="0,26,0,0" Maximum="255" SmallChange="1" ValueChanged="Slider_ValueChanged_1"/>
+                                </Grid>
+                            </Border>
+                        </StackPanel>
+                    </Border>
+                </Grid>
+            </Border>
+
+
+
+
+            <Border BorderThickness="1" Height="23" VerticalAlignment="Bottom" CornerRadius="8" Width="96" HorizontalAlignment="Right" Background="White">
+                <Grid Margin="0,-5,0,-4">
+                    <Label Content="Save setting" HorizontalAlignment="Center" VerticalAlignment="Center"></Label>
+                </Grid>
+            </Border>
+
+
+        </Grid>
+
+
+    </Border>
+
+</UserControl>

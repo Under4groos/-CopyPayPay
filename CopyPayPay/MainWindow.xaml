@@ -7,12 +7,12 @@
         mc:Ignorable="d"       
         Title="MainWindow" Height="595" Width="1200" 
         WindowStyle="None" AllowsTransparency="True" ShowInTaskbar="True" 
-        WindowState= "Normal" SizeChanged="window_SizeChanged" Icon="CPyPyIcon.ico">
+        WindowState= "Normal" Icon="CPyPyIcon.ico" Loaded="window_Loaded">
 
     <Window.Background>
-        <SolidColorBrush Opacity="0.8" Color="White"/>
+        <SolidColorBrush x:Name="BackgroundPR" Opacity="0.8" />
     </Window.Background>
-    
+
     <Window.Resources>
         <!--<Style
            x:Key="StretchedContainerStyle"
@@ -63,7 +63,9 @@
     <Grid>
         <!--<Line X1="0" Y1="0" X2="0" Y2="{Binding ActualHeight, ElementName=window, Mode=OneWay}" Stroke="{Binding Background, ElementName=PC}" StrokeThickness="3"/>-->
         <Polyline x:Name="Polyline_" Stroke="#FFF90000"></Polyline>
-        <Contrlos:PanelControl x:Name="PC" Title="CopyPayPay" Alpha="0.9" Height="26" VerticalAlignment="Top" Width="Auto" MouseDown="PanelControl_MouseDown"/>
+        <Contrlos:PanelControl x:Name="PC" Title="CopyPayPay" Alpha="0.9" Height="26" VerticalAlignment="Top" Width="Auto" MouseDown="PanelControl_MouseDown">
+
+        </Contrlos:PanelControl>
         <ListBox x:Name="Listpanel" ScrollViewer.CanContentScroll="False" ScrollViewer.VerticalScrollBarVisibility="Hidden"   Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}"  Margin="0,27,0,0" Grid.IsSharedSizeScope="True">
             <ListBox.ItemContainerStyle>
                 <Style TargetType="{x:Type ListBoxItem}">
@@ -94,8 +96,9 @@
                 </Style>
             </ListBox.ItemContainerStyle>
         </ListBox>
+        <Contrlos:SettingPanel x:Name="SettingPanelW" HorizontalAlignment="Left" Margin="0,24,0,0" Width="360"  />
 
-        
+
     </Grid>
 
 </Window>
