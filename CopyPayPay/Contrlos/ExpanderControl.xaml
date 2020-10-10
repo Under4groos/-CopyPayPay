@@ -4,7 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:CopyPayPay.Contrlos"
-             mc:Ignorable="d" Height="59" Width="146" WindowStyle="None" 
+             mc:Ignorable="d" Height="86" Width="146" WindowStyle="None" 
             AllowsTransparency="True" ShowInTaskbar="True" Topmost="True" MouseLeave="Window_MouseLeave">
     <Window.Resources>
         <Style x:Key="TransparentStyle" TargetType="{x:Type Button}">
@@ -33,7 +33,12 @@
                 <Label Content="Save" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White"/>
             </Grid>
         </Button>
-        <Button x:Name="DeletePanel" Style="{StaticResource TransparentStyle}" Height="{Binding Height, ElementName=border}" VerticalAlignment="Top" BorderBrush="{x:Null}" Foreground="{x:Null}" Margin="0,1,0,0" Padding="0">
+        <Button x:Name="CopyText" Style="{StaticResource TransparentStyle}" Height="{Binding Height, ElementName=border}" VerticalAlignment="Top" BorderBrush="{x:Null}" Foreground="{x:Null}">
+            <Grid>
+                <Label Content="Copy all" FontSize="{Binding FontSize, ElementName=label}" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White"/>
+            </Grid>
+        </Button>
+        <Button x:Name="DeletePanel" Style="{StaticResource TransparentStyle}" Height="{Binding Height, ElementName=border}" VerticalAlignment="Top" BorderBrush="{x:Null}" Foreground="{x:Null}">
             <Grid>
                 <Label Content="Delete" FontSize="{Binding FontSize, ElementName=label}" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White"/>
             </Grid>

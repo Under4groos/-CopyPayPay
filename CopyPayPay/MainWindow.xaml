@@ -64,7 +64,7 @@
         <!--<Line X1="0" Y1="0" X2="0" Y2="{Binding ActualHeight, ElementName=window, Mode=OneWay}" Stroke="{Binding Background, ElementName=PC}" StrokeThickness="3"/>-->
         <Polyline x:Name="Polyline_" Stroke="#FFF90000"></Polyline>
         <Contrlos:PanelControl x:Name="PC" Title="CopyPayPay" Alpha="0.9" Height="26" VerticalAlignment="Top" Width="Auto" MouseDown="PanelControl_MouseDown"/>
-        <ListBox x:Name="Listpanel" ScrollViewer.CanContentScroll="False" ScrollViewer.VerticalScrollBarVisibility="Hidden"   Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}"  Margin="0,27,0,-22" Grid.IsSharedSizeScope="True">
+        <ListBox x:Name="Listpanel" ScrollViewer.CanContentScroll="False" ScrollViewer.VerticalScrollBarVisibility="Hidden"   Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}"  Margin="0,27,0,0" Grid.IsSharedSizeScope="True">
             <ListBox.ItemContainerStyle>
                 <Style TargetType="{x:Type ListBoxItem}">
                     <Setter Property="Margin" Value="0,0"/>

@@ -78,9 +78,17 @@ namespace CopyPayPay.Contrlos
                 expanderControl.Left = CurPosition.X - 10;
                 expanderControl.Removinglines.Click += SavingToFile;
                 expanderControl.DeletePanel.Click += DeletePanelID;
+                expanderControl.CopyText.Click += CopyText_Click;
                 expanderControl.Show();
                 expanderControl_l = expanderControl;
             }  
+        }
+
+        private void CopyText_Click(object sender, RoutedEventArgs e)
+        {
+
+            TextRange doc = new TextRange(RichText.Document.ContentStart, RichText.Document.ContentEnd);
+            System.Windows.Clipboard.SetData(System.Windows.DataFormats.Text, (Object)doc.Text);
         }
 
         private void SavingToFile(object sender, RoutedEventArgs e)
